@@ -10,7 +10,9 @@ sudo docker run  --name tester -it --rm -p 80:80 -p 443:443 test
 choix autoindex :
 sudo docker run -e autoindex=false --name tester -it --rm -p 80:80 -p 443:443 test
 
+
 commands:
+sudo docker exec -it tester bash
 sudo service nginx stop
 docker build . -t test 
 docker rm $(docker ps -a -q)

@@ -1,5 +1,6 @@
+#!/bin/sh
 
-if [ $autoindex == true ]
+if [ $AUTOINDEX == true ]
 then
     echo autoindex on
     rm /var/www/my_super_site/index.nginx-debian.html 

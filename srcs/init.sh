@@ -1,9 +1,9 @@
 #!/bin/sh
 # Creating my_super_site directory
-mkdir -p /var/www/my_super_site/
+# mkdir -p /var/www/my_super_site/
 
 # installing non auto index
-mv /var/www/html/index.nginx-debian.html /var/www/my_super_site
+#mv /var/www/html/index.nginx-debian.html /var/www/my_super_site
 
 # Giving exec rights to user www-data
 chown -R www-data /var/www/*
