@@ -45,21 +45,21 @@ WORKDIR /root
 # PHP MY ADMIN
 
 # Installing phpmyadmin
-RUN wget https://files.phpmyadmin.net/phpMyAdmin/5.0.2/phpMyAdmin-5.0.2-all-languages.tar.gz
-RUN tar -xvf phpMyAdmin-5.0.2-all-languages.tar.gz
-RUN mv phpMyAdmin-5.0.2-all-languages /var/www/my_super_site/phpmyadmin
-RUN rm phpMyAdmin-5.0.2-all-languages.tar.gz
+RUN wget https://files.phpmyadmin.net/phpMyAdmin/5.0.2/phpMyAdmin-5.0.2-all-languages.tar.gz && \
+ 	tar -xvf phpMyAdmin-5.0.2-all-languages.tar.gz && \
+ 	mv phpMyAdmin-5.0.2-all-languages /var/www/my_super_site/phpmyadmin && \
+ 	rm phpMyAdmin-5.0.2-all-languages.tar.gz
 
-#RUN wget https://files.phpmyadmin.net/phpMyAdmin/5.0.2/phpMyAdmin-5.0.2-all-languages.tar.gz -O pma.tar.gz && \
-#	cd /var/www/my_super_site && \
-#	tar -xvf /root/pma.tar.gz ./phpmyadmin 
+# RUN wget https://files.phpmyadmin.net/phpMyAdmin/5.0.2/phpMyAdmin-5.0.2-all-languages.tar.gz -O pma.tar.gz && \
+# 	cd /var/www/my_super_site/phpmyadmin  && \
+# 	tar -xvf /root/pma.tar.gz 
 
 
 # Installing wordpress
-RUN wget -c https://wordpress.org/latest.tar.gz
-RUN tar -xvf latest.tar.gz
-RUN mv wordpress/ /var/www/my_super_site/
-RUN rm latest.tar.gz
+RUN wget -c https://wordpress.org/latest.tar.gz && \
+	tar -xvf latest.tar.gz && \
+	mv wordpress/ /var/www/my_super_site/ && \
+	rm latest.tar.gz
 
 # Moving wordpress configuration source file to proper destination
 COPY srcs/wp-config.php /var/www/my_super_site/wordpress
