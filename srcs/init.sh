@@ -1,3 +1,4 @@
+#!/bin/sh
 # Creating my_super_site directory
 mkdir -p /var/www/my_super_site/
 
@@ -11,26 +12,11 @@ chmod -R 755 /var/www/*
 # Moving to /tmp/ to download and configure pma, wp, and nginx
 cd tmp/
 
-# Installing phpmyadmin
-wget https://files.phpmyadmin.net/phpMyAdmin/5.0.2/phpMyAdmin-5.0.2-all-languages.tar.gz
-tar -xvf phpMyAdmin-5.0.2-all-languages.tar.gz
-mv phpMyAdmin-5.0.2-all-languages /var/www/my_super_site/phpmyadmin
-rm phpMyAdmin-5.0.2-all-languages.tar.gz
-
 # Moving phpmyadmin configuration source file to proper destination
 cp /var/www/my_super_site/phpmyadmin/config.sample.inc.php /var/www/my_super_site/phpmyadmin/config.inc.php
 
 # mv phpmyadmin.inc.php /var/www/my_super_site/phpmyadmin/config.inc.php
 mv php-info.php /var/www/my_super_site/php-info.php
-
-# Installing wordpress
-wget -c https://wordpress.org/latest.tar.gz
-tar -xvf latest.tar.gz
-mv wordpress/ /var/www/my_super_site/
-rm latest.tar.gz
-
-# Moving wordpress configuration source file to proper destination
-mv wp-config.php /var/www/my_super_site/wordpress
 
 # Moving nginx configuration into proper destination
 
